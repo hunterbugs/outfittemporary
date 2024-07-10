@@ -1,10 +1,10 @@
 {
-  "зерновые": "Cereals",
-  "масла и жиры": "Oils and fats",
-  "молочные": "Dairy products",
-  "мучные": "Flour products",
-  "мясо": "Meat",
-  "овощи и зелень": "Vegetables and herbs",
-  "орехи": "Nuts",
-  "яйца": "Eggs"
+  "Cereal": "Cereals",
+  "Oils and fats": "Oils and fats",
+  "Dairy products": "Dairy products",
+  "Flour products": "Flour products",
+  "Meat": "Meat",
+  "Vegetables and herbs": "Vegetables and herbs",
+  "Nuts": "Nuts",
+  "Egg": "Eggs"
 }

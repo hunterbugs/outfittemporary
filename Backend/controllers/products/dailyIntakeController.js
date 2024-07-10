@@ -1,5 +1,5 @@
 const { Product } = require("../../models");
-const { RequestError } = require("../../helpers");
+const { httpError } = require("../../helpers");
 
 const dailyIntakeController = async (req, res, next) => {
   const { age, height, currentWeight, desiredWeight, bloodType } = req.body;
@@ -16,13 +16,13 @@ const dailyIntakeController = async (req, res, next) => {
       [`groupBloodNotAllowed.${bloodType}`]: true,
     },
     {
-      title: `$title.en`,
+      title: `$title`,
       categories: `$categories`,
     }
   );
 
   if (!result) {
-    throw RequestError(404, "Not found");
+    throw httpError(404, "Not found");
   }
 
   const productCategories = result

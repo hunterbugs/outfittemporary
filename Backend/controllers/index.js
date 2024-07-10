@@ -2,14 +2,12 @@ const register = require("./auth/register");
 const login = require("./auth/login");
 const logout = require("./auth/logout");
 const refresh = require("./auth/refresh");
-const googleAuth = require("./auth/googleAuth");
-const facebookAuth = require("./auth/facebookAuth");
 const getCurrentUser = require("./auth/getCurrentUser");
 const sendKey = require("./auth/sendKey");
 const verifyKey = require("./auth/verifyKey");
 const saveNewPassword = require("./auth/saveNewPassword");
 const resendEmail = require("./auth/resendEmail");
-const verificateEmail = require("./auth/verificateEmail");
+const verifyEmail = require("./auth/verifyEmail");
 
 const addMeal = require("./dailyNutritions/addMeal");
 const removeMeal = require("./dailyNutritions/removeMeal");
@@ -26,8 +24,6 @@ module.exports = {
   login,
   logout,
   refresh,
-  googleAuth,
-  facebookAuth,
   getCurrentUser,
   findOneProduct,
   addMeal,
@@ -40,5 +36,5 @@ module.exports = {
   verifyKey,
   saveNewPassword,
   resendEmail,
-  verificateEmail,
+  verifyEmail,
 };

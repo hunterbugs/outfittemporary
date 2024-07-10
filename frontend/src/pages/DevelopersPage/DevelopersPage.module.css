@@ -14,6 +14,9 @@
 .item {
   margin: 20px;
   width: 200px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   box-shadow: 0px 0px 5px 1px var(--accent-color);
   border-radius: 4px;
 }
@@ -21,4 +24,11 @@
 .text {
   color: var(--main-color);
   padding: 10px 0 10px 10px;
+  font-size: 11.5px;
+}
+
+.img {
+  width: 190px;
+  height: 170px;
+
 }

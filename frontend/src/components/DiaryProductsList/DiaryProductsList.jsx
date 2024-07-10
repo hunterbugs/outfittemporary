@@ -20,7 +20,7 @@ const DiaryProductsList = () => {
   return (
     <>
       {isLoading && <Loader />}
-      {error && <p>Error. {error.message}</p>}
+      {error && <p>{error.message}</p>}
       {showMeals && (
         <ul className={s.list}>
           {dailyMeals.map(i => (

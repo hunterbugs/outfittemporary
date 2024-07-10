@@ -12,7 +12,15 @@ const developerSchema = new Schema(
       type: String,
       required: [true],
     },
-    avatarUrl: {
+    avatarURL: {
+      type: String,
+      required: [true],
+    },
+    defaultURL: {
+      type: String,
+      required: [true],
+    },
+    email: {
       type: String,
       required: [true],
     },

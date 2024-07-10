@@ -29,8 +29,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.2.0",
     "morgan": "^1.10.0",
-    "node-mailjet": "^6.0.5",
     "nodemailer": "^6.9.14",
+    "passport": "^0.7.0",
     "uuid": "^9.0.1"
   }
 }

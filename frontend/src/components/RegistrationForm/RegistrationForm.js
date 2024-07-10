@@ -1,5 +1,5 @@
-import GoogleLogo from '../../assets/icons/googleLogo.svg';
-import FacebookText from '../../assets/icons/facebookText.svg';
+// import GoogleLogo from '../../assets/icons/googleLogo.svg';
+// import FacebookText from '../../assets/icons/facebookText.svg';
 import eyeOpened from '../../assets/icons/eye.svg';
 import eyeClosed from '../../assets/icons/eye-blocked.svg';
 import { Button } from 'components';
@@ -10,7 +10,7 @@ import * as Yup from 'yup';
 import { useState } from 'react';
 import { handleRegistration } from '../../redux/auth/auth-operations';
 
-const { REACT_APP_BACKEND_URL = 'http://localhost:4000/aoi' } = process.env;
+// const { REACT_APP_BACKEND_URL = 'http://localhost:4000/api' } = process.env;
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
@@ -125,12 +125,12 @@ const RegistrationForm = () => {
                   handleSubmit();
                 }}
               />
-              <a className={s.googleBtn} href={`${REACT_APP_BACKEND_URL}/users/google`}>
+              {/* <a className={s.googleBtn} href={`${REACT_APP_BACKEND_URL}/users/google`}>
                 <img className={s.googleLogo} src={GoogleLogo} alt="Google logo" />
               </a>
               <a className={s.googleBtn} href={`${REACT_APP_BACKEND_URL}/users/facebook`}>
                 <img className={s.googleLogo} src={FacebookText} alt="Facebook logo" />
-              </a>
+              </a> */}
             </div>
           </Form>
         )}

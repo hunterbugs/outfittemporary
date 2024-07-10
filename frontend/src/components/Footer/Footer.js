@@ -6,9 +6,9 @@ const Footer = () => {
   return (
     <footer className={s.footer}>
       <p>
-        Copyright © 2022 GoIT. Created by{' '}
+        Copyright © {new Date().getFullYear()} GoIT. Created by{' '}
         <Link className={s.link + ' animate__shakeY'} to={'/developers'}>
-          Smart Team.
+          Team OutFit.
         </Link>
       </p>
     </footer>

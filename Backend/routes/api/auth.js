@@ -21,10 +21,10 @@ router.post(
   ctrlWrapper(ctrl.register)
 );
 
-router.get("/verificate/:verificationToken", ctrlWrapper(ctrl.verificateEmail));
+router.get("/verify/:verificationToken", ctrlWrapper(ctrl.verifyEmail));
 
 router.post(
-  "/verificate",
+  "/verify",
   validateBody(resendEmailSchema),
   ctrlWrapper(ctrl.resendEmail)
 );
@@ -39,7 +39,7 @@ router.post("/refresh", validateBody(refreshSchema), ctrlWrapper(ctrl.refresh));
 
 router.get("/key/:email", ctrlWrapper(ctrl.sendKey));
 
-router.get("/verify/:key", ctrlWrapper(ctrl.verifyKey));
+router.get("/verifyKey/:key", ctrlWrapper(ctrl.verifyKey));
 
 router.patch(
   "/password",
@@ -47,7 +47,8 @@ router.patch(
   ctrlWrapper(ctrl.saveNewPassword)
 );
 
-module.exports = router;
+
+
 // router.get(
 //   "/google",
 //   authSocial.authenticate("google", { scope: ["email", "profile"] })
@@ -69,4 +70,4 @@ module.exports = router;
 //   ctrlWrapper(ctrl.facebookAuth)
 // );
 
-
+module.exports = router;

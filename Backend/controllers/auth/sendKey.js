@@ -1,5 +1,6 @@
 const { User } = require("../../models");
-const { RequestError, mailJetMessage } = require("../../helpers");
+const { httpError } = require("../../helpers");
+const { sendEmail } = require("../../helpers");
 const { v4: uuidv4 } = require("uuid");
 
 const sendKey = async (req, res) => {
@@ -13,20 +14,20 @@ const sendKey = async (req, res) => {
     }
   );
   if (!user) {
-    throw RequestError(404, "Not found");
+    throw httpError(404, "Not found");
   } else {
     const mail = {
       to: user.email,
       subject: "Activation key. Slim Mom App",
-      html: `<h1>Hello, [[var:name]]! You forgot password and want to save new password</h1> 
-        <p>Activation key: [[var:key]]</p>
-        <p>Please copy activation key and enter in Slim Mom App</p>`,
+      html: `<h1>Hello, ${user.name}! You forgot password and want to save new password</h1>
+      <p>Activation key: ${key}</p>
+      <p>Please copy activation key and enter in Slim Mom App</p>`,
       Vars: {
         name: user.name,
         key,
       },
     };
-    await mailJetMessage(mail);
+    await sendEmail(mail);
     res.json({
       message: "success",
     });

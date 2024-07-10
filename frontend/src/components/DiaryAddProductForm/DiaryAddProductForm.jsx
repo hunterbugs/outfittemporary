@@ -112,9 +112,11 @@ const DiaryAddProductForm = () => {
             unstyled
             classNamePrefix="react-select"
             styles={colourStyles}
+            
           />
         </label>
-        <label className={s.label}>
+       
+          <label className={s.label}>
           <input
             type="number"
             name="weight"
@@ -127,10 +129,14 @@ const DiaryAddProductForm = () => {
             onChange={handleInputChange}
           />
         </label>
+       
+        
+        
 
         {width < 768 && <Button text="Add" width={176} />}
 
         {width > 767 && <ButtonPlus />}
+
       </form>
     </>
   );

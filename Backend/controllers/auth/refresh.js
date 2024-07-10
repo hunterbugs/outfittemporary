@@ -1,21 +1,25 @@
+
+
 const jwt = require("jsonwebtoken");
 
 const { User } = require("../../models/user");
 
-const { RequestError } = require("../../helpers");
+const { httpError } = require("../../helpers");
 
 const { createTokens } = require("../../helpers");
 
-const { REFRESH_TOKEN_SECRET_KEY } = process.env;
+// const { SECRET_KEY } = process.env;
+
+// const { REFRESH_TOKEN_SECRET_KEY } = process.env;
 
 const refresh = async (req, res) => {
   try {
     const { refreshToken: token } = req.body;
 
-    const { id } = jwt.verify(JSON.parse(token), REFRESH_TOKEN_SECRET_KEY);
+    const { id } = jwt.verify(JSON.parse(token), SECRET_KEY);
     const user = await User.findById(id);
     if (!user || !user.refreshToken) {
-      throw RequestError(401);
+      throw httpError(401);
     }
 
     const { accessToken, refreshToken } = await createTokens(id);

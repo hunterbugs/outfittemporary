@@ -50,6 +50,7 @@ input.react-select__input {
   padding: 0;
   font-weight: 700;
   line-height: 1.21;
+  width: 500px;
 }
 
 div.react-select__indicators {

@@ -1,5 +1,5 @@
 const bcrypt = require("bcryptjs");
-const { RequestError } = require("../../helpers");
+const { httpError } = require("../../helpers");
 const { User } = require("../../models");
 const saveNewPassword = async (req, res) => {
   const { password, email } = req.body;
@@ -16,7 +16,7 @@ const saveNewPassword = async (req, res) => {
     }
   );
   if (!result) {
-    throw RequestError(404, "Not found user");
+    throw httpError(404, "Not found user");
   }
   res.json({ message: "New password saved" });
 };

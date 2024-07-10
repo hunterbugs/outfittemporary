@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getUser } from 'redux/auth/auth-selector';
 import { handleLogout } from 'redux/auth/auth-operations';
 const UserInfo = () => {
-  const { name = 'Nick' } = useSelector(getUser);
+  const { name = '' } = useSelector(getUser);
   const dispatch = useDispatch();
   return (
     <div className={s.userinfo}>

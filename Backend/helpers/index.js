@@ -1,13 +1,13 @@
-const RequestError = require("./RequestError");
+const httpError = require("./httpError");
 const ctrlWrapper = require("./ctrlWrapper");
 const handleSaveErrors = require("./handleSaveErrors");
 const createTokens = require("./createTokens");
-const mailJetMessage = require("./mailJetMessage");
+const sendEmail = require("./sendEmail");
 
 module.exports = {
-  RequestError,
+  httpError,
   ctrlWrapper,
   handleSaveErrors,
   createTokens,
-  mailJetMessage,
+  sendEmail,
 };

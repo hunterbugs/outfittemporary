@@ -21,9 +21,6 @@ const SideBar = () => {
     dispatch(getDailyMeals({ date: date }));
   }, [dispatch, date, dailyMeals]);
 
-  const getCategoryName = i => {
-    return categories[i];
-  };
 
   const dailyCalories = Number(userDailyDiet?.calories).toFixed(1);
   const consumedCalories = dailyMeals
@@ -36,10 +33,6 @@ const SideBar = () => {
       ? 0
       : (dailyCalories - consumedCalories).toFixed(1);
   const percent = ((consumedCalories * 100) / dailyCalories).toFixed(2);
-
-  const foodCategories = userDailyDiet?.categories?.map(i => {
-    return getCategoryName(i);
-  });
 
   const showInfo =
     userDailyDiet?.calories &&
@@ -57,6 +50,7 @@ const SideBar = () => {
     !userDailyDiet?.categories;
 
   const handleBtnClick = e => {
+    
     if (e.target.textContent === activeCategory) {
       setProductsShown(false);
       setActiveCategory('');
@@ -64,7 +58,7 @@ const SideBar = () => {
     } else {
       setActiveCategory(e.target.textContent);
       const productsToShow = userDailyDiet?.notAllowedProduct
-        ?.filter(i => getCategoryName(i.category) === e.target.textContent)
+        ?.filter(i => i.category === e.target.textContent)
         .sort((a, b) => a.title.localeCompare(b.title));
       setSpecificProducts(productsToShow);
       setProductsShown(true);
@@ -106,7 +100,7 @@ const SideBar = () => {
           <h2 className={s.title}>Food not recommended</h2>
           {showInfo && (
             <ul className={s.list}>
-              {foodCategories?.map((element, index) => (
+              {userDailyDiet?.categories?.map((element, index) => (
                 <li key={`not-recommended-categories-${index}`} className={s.item}>
                   <button type="button" onClick={handleBtnClick} className={s.button}>
                     {element}
@@ -129,6 +123,7 @@ const SideBar = () => {
           </ul>
         </section>
       )}
+    
     </div>
   );
 };

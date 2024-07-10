@@ -17,6 +17,7 @@ export const signup = async data => {
   return result.data;
 };
 
+
 export const login = async data => {
   const result = await instance.post('/users/login', data);
   setToken(result.data.accessToken);
@@ -46,7 +47,7 @@ export const getActivationKey = async email => {
 };
 
 export const getKeyVerify = async key => {
-  const result = await instance.get(`/users/verify/${key}`);
+  const result = await instance.get(`/users/verifyKey/${key}`);
   return result.data;
 };
 
